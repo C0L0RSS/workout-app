@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, viewport-fit=cover'>
+    <title>August Workout Tracker</title>
+    <link rel='stylesheet' href='style.css'>
+    <link rel='preconnect' href='https://fonts.googleapis.com'>
+    <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
+    <link href='https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap' rel='stylesheet'>
+  </head>
+  <body>
+    <div id='app-root' class='app-root'>
+      <div class='app-shell'>
+        <header class='app-header'>
+          <div class='app-header-left'>
+            <img src='image_tool_8.png' alt='August logo' class='app-logo'>
+            <div class='app-title-block'>
+              <h1 class='app-title'>August</h1>
+              <p class='app-subtitle'>Calm workout tracker</p>
+            </div>
+          </div>
+          <div class='app-header-right'>
+            <button type='button' class='ghost-button' id='resetAppButton'>Reset</button>
+          </div>
+        </header>
+        <main class='screen-container'>
+          <section id='screen-user' class='screen screen--active'>
+            <div class='screen-inner'>
+              <header class='screen-header'>
+                <h2 class='screen-title'>Who is training?</h2>
+                <p class='screen-subtitle'>Choose a lifter to load their saved workouts.</p>
+              </header>
+              <div class='user-grid'>
+                <button class='user-card' data-user='Anton' type='button'>
+                  <div class='user-card-main'>
+                    <p class='user-name'>Anton</p>
+                    <p class='user-subtitle'>Upper / lower split</p>
+                  </div>
+                </button>
+                <button class='user-card' data-user='August' type='button'>
+                  <div class='user-card-main'>
+                    <p class='user-name'>August</p>
+                    <p class='user-subtitle'>Full body focus</p>
+                  </div>
+                </button>
+              </div>
+              <div class='screen-footer-actions'>
+                <button id='userStartButton' class='primary-button' type='button' disabled>Start workout</button>
+              </div>
+            </div>
+          </section>
+          <section id='screen-workouts' class='screen'>
+            <div class='screen-inner'>
+              <header class='screen-header'>
+                <button type='button' class='ghost-button ghost-button--back' id='backToUser'>&larr; Change user</button>
+                <h2 class='screen-title' id='workoutUserTitle'>Workouts</h2>
+                <p class='screen-subtitle' id='workoutUserSubtitle'>Select a template to preview the session.</p>
+              </header>
+              <div class='workout-layout'>
+                <div class='workout-grid' id='workoutTemplateGrid'></div>
+                <aside class='workout-preview' id='workoutPreview'>
+                  <h3 class='preview-title'>Template preview</h3>
+                  <p class='preview-subtitle'>Pick a workout on the left to see included exercises.</p>
+                  <ul class='preview-list' id='previewExerciseList'></ul>
+                </aside>
+              </div>
+              <div class='screen-footer-actions'>
+                <button id='workoutStartButton' class='primary-button' type='button' disabled>Start workout</button>
+              </div>
+            </div>
+          </section>
+          <section id='screen-active' class='screen'>
+            <div class='screen-inner'>
+              <header class='screen-header screen-header--active'>
+                <div>
+                  <h2 class='screen-title' id='activeWorkoutTitle'>Active workout</h2>
+                  <p class='screen-subtitle' id='activeWorkoutSubtitle'>Stay on this screen until you finish.</p>
+                </div>
+                <button type='button' class='rest-pill' id='restTimerButton'>
+                  <span class='rest-pill-label'>Rest</span>
+                  <span class='rest-pill-value' id='restTimerValue'>1:30</span>
+                </button>
+              </header>
+              <div class='active-body'>
+                <div class='exercise-grid' id='exerciseGrid'></div>
+              </div>
+              <div class='bottom-bar'>
+                <div class='bottom-bar-inner'>
+                  <button id='finishWorkoutButton' class='secondary-button' type='button'>Finish workout</button>
+                  <p class='bottom-hint'>Your progress is stored in this session only. No accounts, no cloud.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+        </main>
+        <footer class='app-footer'>
+          <p class='footer-text'>Created by Neon</p>
+        </footer>
+      </div>
+    </div>
+    <script src='script.js'></script>
+  </body>
+</html>
