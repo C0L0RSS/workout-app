@@ -54,19 +54,40 @@
             <div class='screen-inner'>
               <header class='screen-header'>
                 <button type='button' class='ghost-button ghost-button--back' id='backToUser'>&larr; Change user</button>
-                <h2 class='screen-title' id='workoutUserTitle'>Workouts</h2>
-                <p class='screen-subtitle' id='workoutUserSubtitle'>Select a template to preview the session.</p>
+                <h2 class='screen-title' id='workoutUserTitle'>Templates</h2>
+                <p class='screen-subtitle' id='workoutUserSubtitle'>Pick a template to edit and start a workout.</p>
               </header>
-              <div class='workout-layout'>
-                <div class='workout-grid' id='workoutTemplateGrid'></div>
-                <aside class='workout-preview' id='workoutPreview'>
-                  <h3 class='preview-title'>Template preview</h3>
-                  <p class='preview-subtitle'>Pick a workout on the left to see included exercises.</p>
-                  <ul class='preview-list' id='previewExerciseList'></ul>
-                </aside>
+              <div class='workout-grid workout-grid--templates' id='workoutTemplateGrid'></div>
+            </div>
+          </section>
+          <section id='screen-template' class='screen'>
+            <div class='screen-inner'>
+              <header class='screen-header'>
+                <button type='button' class='ghost-button ghost-button--back' id='backToTemplates'>&larr; Templates</button>
+                <h2 class='screen-title' id='templateTitle'>Template</h2>
+                <p class='screen-subtitle' id='templateSubtitle'>Edit blocks, sets, and rest times before starting.</p>
+              </header>
+              <div class='template-meta'>
+                <label class='field'>
+                  <span class='field-label'>Template name</span>
+                  <input id='templateNameInput' class='text-input' type='text' placeholder='e.g. Upper Body A'>
+                </label>
               </div>
-              <div class='screen-footer-actions'>
-                <button id='workoutStartButton' class='primary-button' type='button' disabled>Start workout</button>
+              <div class='template-blocks'>
+                <div class='template-blocks-header'>
+                  <h3 class='section-title'>Blocks</h3>
+                  <p class='section-subtitle'>Drag to reorder. Supersets/circuits rest after each round.</p>
+                </div>
+                <div id='blockList' class='block-list'></div>
+                <div class='block-actions'>
+                  <button id='addSingleBlock' class='secondary-button' type='button'>+ Exercise</button>
+                  <button id='addGroupBlock' class='secondary-button' type='button'>+ Superset / circuit</button>
+                </div>
+              </div>
+              <div class='screen-footer-actions template-footer'>
+                <button id='saveTemplateButton' class='secondary-button' type='button'>Save template</button>
+                <button id='templateStartButton' class='primary-button' type='button'>Start workout</button>
+                <button id='deleteTemplateButton' class='ghost-button template-danger' type='button'>Delete template</button>
               </div>
             </div>
           </section>
@@ -88,7 +109,7 @@
               <div class='bottom-bar'>
                 <div class='bottom-bar-inner'>
                   <button id='finishWorkoutButton' class='secondary-button' type='button'>Finish workout</button>
-                  <p class='bottom-hint'>Your progress is stored in this session only. No accounts, no cloud.</p>
+                  <p class='bottom-hint'>Templates are saved on this device. No accounts, no cloud.</p>
                 </div>
               </div>
             </div>
@@ -99,6 +120,6 @@
         </footer>
       </div>
     </div>
-    <script src='script.js'></script>
+    <script src='app.js'></script>
   </body>
 </html>
